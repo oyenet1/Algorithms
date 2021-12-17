@@ -1,3 +1,12 @@
 newFile = open('file.txt')
+
+count = 0
+# counting of lines
 for line in newFile:
-    print(line)
+    count += 1
+    if line.endswith('Bukunmi'):
+        print(line)
+    else:
+        print('The line does not start with Oyerinde')
+
+print('There are', count, 'line in the document')
