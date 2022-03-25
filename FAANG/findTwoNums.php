@@ -4,7 +4,7 @@ function findTwoNums(array $nums, int $target){
         $numToFind = $target - $nums[$i];
         for ($j=$i + 1; $j < count($nums); $j++) { 
             if ($nums[$j] == $numToFind) {
-               return [$i, $j];
+               return $i. ', ' . $j;
             }
         }
     }
