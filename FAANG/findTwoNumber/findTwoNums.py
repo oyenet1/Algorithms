@@ -1,3 +1,5 @@
+# o(n)*2
+
 def findTwoNums(nums, target):
     for i in range(len(nums)):
         ntf = target - nums[i]
@@ -8,3 +10,8 @@ def findTwoNums(nums, target):
     return 'cannot find answer'
 
 print(findTwoNums([1, 3, 7, 9, 4], 4))
+
+# second way 0(n)
+def bTwo(nums, target):
+    for i in range(len(nums)):
+        

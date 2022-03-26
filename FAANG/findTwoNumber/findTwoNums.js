@@ -9,5 +9,4 @@ function findTwoNums(nums, target) {
     }
     return null;
 }
-
 console.log(findTwoNums([1, 3, 7, 9, 2], 11));
