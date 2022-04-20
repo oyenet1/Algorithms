@@ -24,4 +24,3 @@ def low2(arr):
 #   return arr[0]
 print(low(nums), 'first solution answer')
 print(low2(nums), 'first solution answer')
-  
