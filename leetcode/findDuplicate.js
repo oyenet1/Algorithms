@@ -32,7 +32,7 @@ class FindDuplicate {
     return this.nums.length === new Set(this.nums).size ? false : true;
   }
 }
-var numbers = [1, 3, 4, 2, 1];
+var numbers = [1, 3, 4, 2];
 
 let first = new FindDuplicate(numbers);
 console.log(first.methodOne());
