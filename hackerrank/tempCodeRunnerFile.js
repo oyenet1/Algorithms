@@ -1,1 +1,1 @@
-arr[i] + arr[j]
+odd ** days
