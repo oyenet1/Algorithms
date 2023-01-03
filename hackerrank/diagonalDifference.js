@@ -3,7 +3,7 @@ function diaDiff(arr) {
   let rd = 0;
   let row = arr.length;
   for (let i = 0; i < row; i++) {
-    for (let j = 0; j < arr.length; j++) {
+    for (let j = 0; j < row; j++) {
       if (i == j) {
         ld += arr[i][j];
       }
