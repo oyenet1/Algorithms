@@ -41,14 +41,13 @@ function methodTwo(arr1, arr2 = null) {
       return false;
     }
     if (ob2[key ** 2] !== ob1[key]) {
-      console.log(ob2[key ** 2], ob1[key]);
       return false;
     }
   }
   return true;
 }
 
-let a = [1, 2, 3, 2];
+let a = [1, 2, 3, 2, 2];
 let b = [4, 9, 4, 1];
 
 console.log(methodTwo(a, b));
