@@ -1,4 +1,7 @@
 let cUValues = (nums) => {
+  if (nums.length < 1) {
+    return undefined;
+  }
   let numV = {};
   let count = 0;
   for (let i = 0; i < nums.length; i++) {
@@ -17,16 +20,15 @@ let methodTwo = (arr) => {
     return undefined;
   }
   let left = 0;
-  let right = 1;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[right] > arr[left]) {
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[left] !== arr[j]) {
       left++;
-      arr[left] = arr[right];
+      arr[left] = arr[j];
     }
-    right++;
+    j++;
   }
   return left + 1;
 }
-let sample = [1, 1, 2, 2, 3, 3, 5, 5, 5, 6];
+let sample = [];
 console.log(cUValues(sample));
 console.log(methodTwo(sample));

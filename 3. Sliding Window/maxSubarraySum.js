@@ -14,3 +14,5 @@ function maxSubarraySum(arr, s) {
 }
 
 let samples = [1, 4, 4, 2, 3, 4, 3, 1];
+
+console.log(maxSubarraySum(samples, 4))

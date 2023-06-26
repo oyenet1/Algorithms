@@ -68,3 +68,93 @@
 1. Dynamic programming
 1. Greedy Algoriyhm
 1. Backtracking etc.
+
+# 1. Frequency Counter
+
+**a). Anagram:** _` An anagram is two word with the same letters of alphabet eg. rare and rear, dear and read`_
+
+```js
+// this is anagram. O(N)
+let isAnagram = function (word1, word2) {
+  let first = {};
+  let second = {};
+
+  for (const char of word1) {
+    first[char] = ++first[char] || 1;
+  }
+  for (const char of word2) {
+    second[char] = ++second[char] || 1;
+  }
+  for (const key in first) {
+    if (first[key] !== second[key]) {
+      return false;
+    }
+  }
+  return true;
+};
+```
+
+**b). countUniqueValue:** _`return the count of unique values in an array`_
+
+```js
+let countUniqueValues = (nums) => {
+  if (nums.length < 1) {
+    return undefined;
+  }
+  let numV = {};
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    numV[nums[i]] = ++numV[nums[i]] || 1;
+  }
+  for (let key in numV) {
+    count++;
+  }
+  // return Object.keys(numV).length;
+  return count;
+};
+```
+
+# 2. Multiple pointers
+
+**_Note: multple pointer can only be used in a sorted list or array_**
+
+**a). SumZero:** _`Sumzero is used to determine if there are two numbers in a sorted array who their sum is equal to zero(0)`_
+
+```js
+// using multiple pointer
+
+let sumZero = () => {
+  let l = 0;
+  let r = arr.length - 1;
+  while (l < r) {
+    let sum = arr[l] + arr[r];
+    if (sum < 0) {
+      l++;
+    } else if (sum > 0) {
+      r--;
+    } else {
+      return [arr[l], arr[r]];
+    }
+  }
+};
+```
+
+**b). countUniqueValue:** _`return the count of unique values in an array`_
+
+```js
+// using two pointer
+let methodTwo = (arr) => {
+  if (arr.length < 1) {
+    return undefined;
+  }
+  let left = 0;
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[left] !== arr[j]) {
+      left++;
+      arr[left] = arr[j];
+    }
+    j++;
+  }
+  return left + 1;
+};
+```

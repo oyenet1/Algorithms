@@ -16,4 +16,4 @@ let isAnagram = function (word1, word2) {
   return true;
 }
 
-console.log(isAnagram("fried", "fired"));
+console.log(isAnagram("are", "ear"));
