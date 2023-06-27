@@ -158,3 +158,72 @@ let methodTwo = (arr) => {
   return left + 1;
 };
 ```
+
+# 3. Sliding window
+
+# 4. Divide and Conquer
+
+# 5. Dynamic programming
+
+# 6. Greedy Algoriyhm
+
+# 7. Backtracking etc.
+
+## Recurssion
+
+`A recurssion is a function that called itself. It make use of` **`STACK`**
+
+### Stack: A stack is a data-structure that follows LIFO (_Last In, First Out_).
+
+### Examples of Recurssion
+
+### i. count down
+
+```js
+let countDownTwo = (num) => {
+  if (num <= 0) {
+    console.log("All done");
+    return;
+  }
+  console.log(num);
+  num--;
+  countDownTwo(num);
+};
+```
+
+### ii. Sum of natural number
+
+```js
+let soNNThree = (num) => {
+  if (num === 0) return 0;
+  return num + soNNThree(--num);
+};
+```
+
+### iii. Factorial
+
+```js
+let factorialTwo = (num) => {
+  if (num < 0) return 0;
+  if (num < 1) return 1;
+  return num * factorial(--num);
+};
+```
+
+### iv. Power
+
+```js
+let powerTwo = (b, p) => {
+  if (p === 0) return 1;
+  return b * powerTwo(b, p - 1);
+};
+```
+
+### V. Product of Array
+
+```js
+let poa = (arr) => {
+  if (arr.length === 0) return 1;
+  return arr[0] * poa(arr.slice(1));
+};
+```

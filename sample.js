@@ -27,6 +27,11 @@ let predict = (amount, odd, times) => {
   return amount * (odd ** times);
 }
 
+function recursiveRange(x) {
+  if (x === 0) return 0;
+  return x + recursiveRange(x - 1);
+}
+
 // console.log(power(2, 1000));
 // console.log(methodtwo(2, 1000));
-console.log(predict(500, 2.1, 10))
+console.log(recursiveRange(0))
