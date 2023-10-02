@@ -13,4 +13,4 @@ function toBinary(N) {
   return by;
 }
 
-console.log(toBinary(4));
+console.log(toBinary(1));

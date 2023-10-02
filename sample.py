@@ -1,10 +1,8 @@
-def employ(name, age):
-  if age >= 18 and age <= 40:
-    result = f'{name}, You are qualify to work with us'
-  elif age > 40:
-    result = f'{name}, You are too old for the job'
-  else:
-    result = f'{name}, Yo are young for the job'
-  return result
+#!/usr/bin/env python3
+def sONn(num):
+  if num <= 1:
+    return num
+  return num + sONn(num - 1)
 
-print(employ('John', 41))
+print(sONn(4))
+  
