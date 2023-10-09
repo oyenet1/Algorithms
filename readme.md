@@ -227,3 +227,33 @@ let poa = (arr) => {
   return arr[0] * poa(arr.slice(1));
 };
 ```
+
+## Search Algorithm
+
+## Sorting Algorithm
+
+There are many types of sorting such as bubble sort, selection sort insertion sort merge sort, quick sort, and radix sort.
+
+### _Bubble Sort_
+
+- **Step 1:** Start with an unsorted array of elements.
+
+- **Step 2:** Set up a flag called `swapped` and initialize it to `true`. This flag helps track if any swaps were made during a pass through the array.
+
+- **Step 3:** Begin a loop that continues as long as `swapped` is `true`. This loop ensures you keep iterating through the array until no more swaps are needed.
+
+- **Step 4:** Inside the loop, set `swapped` to `false` to reset it for this pass.
+
+- **Step 5:** Iterate through the array from the beginning to the second-to-last element.
+
+- **Step 6:** For each pair of adjacent elements, compare them. If the element on the left is greater than the element on the right, they are out of order.
+
+- **Step 7:** If the elements are out of order, swap them. Temporarily store the left element, copy the right element to the left, and put the temporarily stored element in the right position.
+
+- **Step 8:** After swapping, set `swapped` to `true` to indicate a swap was made in this pass.
+
+- **Step 9:** Continue this process, comparing and swapping adjacent elements until you reach the end of the array.
+
+- **Step 10:** Once you complete a full pass without making any swaps (i.e., `swapped` remains false), the array is fully sorted, and you can exit the loop.
+
+- **Step 11:** The array is now sorted in ascending order, and you've successfully used the Bubble Sort algorithm.
