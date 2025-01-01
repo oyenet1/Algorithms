@@ -1,18 +1,18 @@
 function maxSubarraySum(arr, s) {
-  let hSum = -Infinity;
-  for (let i = 0; i < arr.length - s + 1; i++) {
-    let temp = 0;
-    for (let j = 0; j < s; j++) {
-      temp += arr[i + j];
-    }
-
-    if (temp > hSum) {
-      hSum = temp;
+  let mSum = 0;
+  for (let i = 0; i < s; i++) {
+    mSum += arr[i];
+  }
+  let temp = mSum;
+  for (let j = s; j < arr.length; j++) {
+    temp = temp - arr[j - s] + arr[j];
+    if (temp > mSum) {
+      mSum = temp;
     }
   }
-  return hSum;
+  return mSum;
 }
 
-let samples = [1, 4, 4, 2, 3, 4, 3, 1];
+let samples = [1, 4, 10, 4, 2, 11, 3, 4, 9, 3, 1];
 
-console.log(maxSubarraySum(samples, 4))
+console.log(maxSubarraySum(samples, 3));

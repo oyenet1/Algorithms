@@ -12,7 +12,7 @@ let cUValues = (nums) => {
   }
   // return Object.keys(numV).length;
   return count;
-}
+};
 
 // using two pointer
 let methodTwo = (arr) => {
@@ -25,10 +25,9 @@ let methodTwo = (arr) => {
       left++;
       arr[left] = arr[j];
     }
-    j++;
   }
   return left + 1;
-}
-let sample = [];
+};
+let sample = [2, 3, 3, 5, 5, 5, 6, 35];
 console.log(cUValues(sample));
 console.log(methodTwo(sample));

@@ -9,11 +9,12 @@ let isAnagram = function (word1, word2) {
     second[char] = ++second[char] || 1;
   }
   for (const key in first) {
-    if (first[key] !== second[key]) {
-      return false;
-    }
+    // if (first[key] !== second[key]) {
+    //   return false;
+    // }
+    console.log(first[key] !== second[key]);
   }
   return true;
-}
+};
 
-console.log(isAnagram("are", "ear"));
+console.log(isAnagram("areap", "ear"));

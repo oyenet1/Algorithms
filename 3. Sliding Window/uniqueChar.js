@@ -1,0 +1,1 @@
+let longerUniqueChar = (str) => {};
