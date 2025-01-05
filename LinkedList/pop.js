@@ -12,6 +12,28 @@ class SingleLinkList {
     this.length = 0;
   }
 
+  pop() {
+    if (!this.head) {
+      return undefined;
+    }
+    if (this.length === 1) {
+      const poppedNode = this.head;
+      this.head = null;
+      this.tail = null;
+      this.length--;
+      return poppedNode;
+    }
+    let current = this.head;
+    while (current.next.next) {
+      current = current.next;
+    }
+    const poppedNode = current.next;
+    current.next = null;
+    this.tail = current;
+    this.length--;
+    return poppedNode;
+  }
+
   push(val) {
     let newNode = new Node(val);
     if (!this.head) {
@@ -22,30 +44,7 @@ class SingleLinkList {
       this.tail = newNode;
     }
     this.length++;
-
     return this;
-  }
-
-  pop() {
-    if (!this.head) {
-      return undefined;
-    }
-    if (this.length == 1) {
-      this.head = null;
-      this.tail = null;
-      this.length = 0;
-      return this;
-    }
-    let current = this.head;
-    let newTail = current;
-    while (current.next) {
-      newTail = current;
-      current = current.next;
-    }
-    this.tail = newTail;
-    this.tail.next = null;
-    this.length--;
-    return current;
   }
 }
 
@@ -63,4 +62,7 @@ console.log(firstList.pop());
 console.log(firstList.pop());
 console.log(firstList.pop());
 console.log(firstList.pop());
+console.log(firstList.pop());
+
+console.log(firstList);
 console.log(firstList.pop());
