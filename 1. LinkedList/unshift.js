@@ -6,14 +6,13 @@ class UnShiftOperation extends SingleLinkedList {
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
-      this.length += 1;
-      return this;
     } else {
       newNode.next = this.head;
       this.head = newNode;
-      this.length += 1;
-      return this;
     }
+
+    this.length += 1;
+    return this;
   }
 }
 
