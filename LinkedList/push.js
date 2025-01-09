@@ -1,36 +1,36 @@
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
-}
+import { Node, SingleLinkedList } from "./single.js";
 
-class SingleLinkList {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
-  }
-
+class Operation extends SingleLinkedList {
   push(val) {
-    let newNode = new Node(val);
+    const newNode = new Node(val);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+      this.length += 1;
+      return this;
     }
-    this.length++;
 
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length += 1;
     return this;
   }
 }
 
-let firstList = new SingleLinkList();
-firstList.push("Bowofade");
-firstList.push("Akindele");
-firstList.push("Funmi");
-firstList.push("Tolulope");
-firstList.push("Noah");
-firstList.push("Wisdom");
+export default { Operation };
+
+const intNode = new Operation();
+
+// before pushing
+console.log(intNode);
+
+intNode.push(4);
+console.log(intNode.tail);
+intNode.push(24);
+console.log(intNode.tail);
+intNode.push(435);
+console.log(intNode.tail);
+intNode.push(74);
+
+// after pushing
+console.log(intNode);
