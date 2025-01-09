@@ -1,20 +1,15 @@
-import { Node, SingleLinkedList } from "./single.js";
+// ============================================================
+// Author: Bowofade Oyerinde
+// Description: Implementation of ShiftOperation class extending
+//              SingleLinkedList to include unshift and shift methods
+//              for adding and removing nodes from the beginning of the list.
+// ============================================================
+
+import { SingleLinkedList } from "./single.js";
 
 class ShiftOperation extends SingleLinkedList {
-  unshift(val) {
-    let newNode = new Node(val);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      newNode.next = this.head;
-      this.head = newNode;
-    }
-
-    this.length += 1;
-    return this;
-  }
-
+  // Method: shift
+  // Description: Removes the first node from the linked list.
   shift() {
     if (!this.head) {
       return undefined;
@@ -23,12 +18,9 @@ class ShiftOperation extends SingleLinkedList {
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
-      this.length = 0;
-
-      return nodeToRemove;
+    } else {
+      this.head = this.head.next;
     }
-    this.head = this.head.next;
-
     this.length -= 1;
     return nodeToRemove;
   }
@@ -36,10 +28,16 @@ class ShiftOperation extends SingleLinkedList {
 
 export { ShiftOperation };
 
-const list2 = new ShiftOperation();
+const list3 = new ShiftOperation();
 
-console.log(list2.unshift(2));
-console.log(list2.unshift(12));
-console.log(list2.shift());
+// Add values to the beginning of the list
+list3.unshift(2);
+list3.unshift(12);
+list3.unshift(4);
+list3.unshift(7);
+list3.unshift(5);
 
-console.log(list2);
+// Remove and print the first node
+console.log(list3.shift()); // Should remove and return the first node (5)
+console.log(list3.shift()); // Should remove and return the next first node (7)
+console.log(list3); // Should show the updated list
