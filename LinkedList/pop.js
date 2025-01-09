@@ -1,68 +1,56 @@
-class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
-  }
-}
+// ============================================================
+// Author: Bowofade Oyerinde
+// Description: Implementation of PopOperation class extending
+//              PushOperation to include a pop method for
+//              removing the last node from a linked list.
+// ============================================================
 
-class SingleLinkList {
-  constructor() {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
-  }
+import { PushOperation } from "./push.js";
 
+class PopOperation extends PushOperation {
+  // Method: pop
+  // Description: Removes the last node from the linked list.
   pop() {
+    // Check if the list is empty
     if (!this.head) {
       return undefined;
     }
+
+    // Check if the list has only one node
     if (this.length === 1) {
-      const poppedNode = this.head;
+      const nodeToRemove = this.head;
       this.head = null;
       this.tail = null;
-      this.length--;
-      return poppedNode;
+      this.length -= 1;
+      return nodeToRemove;
     }
-    let current = this.head;
-    while (current.next.next) {
-      current = current.next;
-    }
-    const poppedNode = current.next;
-    current.next = null;
-    this.tail = current;
-    this.length--;
-    return poppedNode;
-  }
 
-  push(val) {
-    let newNode = new Node(val);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+    // Traverse the list to find the second last node
+    let currentNode = this.head;
+    let preNode = null;
+    while (currentNode.next) {
+      preNode = currentNode;
+      currentNode = currentNode.next;
     }
-    this.length++;
-    return this;
+
+    // Update the tail and remove the last node
+    preNode.next = null;
+    this.tail = preNode;
+    this.length -= 1;
+    return currentNode;
   }
 }
 
-let firstList = new SingleLinkList();
-firstList.push("Bowofade");
-firstList.push("Akindele");
-firstList.push("Funmi");
-firstList.push("Tolulope");
-firstList.push("Noah");
-firstList.push("Wisdom");
+export { PopOperation };
 
-console.log(firstList.pop());
-console.log(firstList.pop());
-console.log(firstList.pop());
-console.log(firstList.pop());
-console.log(firstList.pop());
-console.log(firstList.pop());
-console.log(firstList.pop());
+// Example usage of PopOperation
+const firstNode = new PopOperation();
+firstNode.push(4);
+firstNode.push(23);
+firstNode.push(41);
+firstNode.push(7);
+firstNode.push(15);
 
-console.log(firstList);
-console.log(firstList.pop());
+console.log(firstNode.pop()); // Should remove and return the last node (15)
+console.log(firstNode.pop()); // Should remove and return the second last node (7)
+console.log(firstNode); // Should show the updated list
