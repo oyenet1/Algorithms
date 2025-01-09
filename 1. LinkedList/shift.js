@@ -21,7 +21,9 @@ class ShiftOperation extends SingleLinkedList {
     } else {
       this.head = this.head.next;
     }
+
     this.length -= 1;
+    nodeToRemove.next = null;
     return nodeToRemove;
   }
 }
